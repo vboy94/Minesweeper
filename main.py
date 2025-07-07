@@ -129,6 +129,7 @@ def main():
                 if event.button == 1:  # ЛКМ — відкрити
                     if cell.is_mine:
                         cell.is_revealed = True
+                        boom_sound.play()
                         game_over = True
                     else:
                         click_sound.play()
@@ -137,6 +138,7 @@ def main():
                 elif event.button == 3:  # ПКМ — прапорець
                     if not cell.is_revealed:
                         cell.is_flagged = not cell.is_flagged
+                        flag_sound.play()
 
         clock.tick(30)
 
