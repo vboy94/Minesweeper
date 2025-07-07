@@ -18,6 +18,12 @@ GREEN = (0, 150, 0)
 
 # --- Ініціалізація Pygame ---
 pygame.init()
+# --- Завантаження звуків ---
+pygame.mixer.init()
+click_sound = pygame.mixer.Sound("sounds/click.wav")
+flag_sound = pygame.mixer.Sound("sounds/flag.wav")
+boom_sound = pygame.mixer.Sound("sounds/boom.wav")
+
 screen = pygame.display.set_mode(WINDOW_SIZE)
 pygame.display.set_caption("Сапер")
 font = pygame.font.SysFont(None, 28)
@@ -125,6 +131,7 @@ def main():
                         cell.is_revealed = True
                         game_over = True
                     else:
+                        click_sound.play()
                         reveal(grid, x, y)
 
                 elif event.button == 3:  # ПКМ — прапорець
