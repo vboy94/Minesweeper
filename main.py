@@ -3,7 +3,7 @@ import sys
 import random
 
 # --- Налаштування гри ---
-WIDTH, HEIGHT = 10, 10  # Розміри сітки
+WIDTH, HEIGHT = 12, 12  # Розміри сітки
 TILE_SIZE = 40
 MINES_COUNT = 10
 WINDOW_SIZE = WIDTH * TILE_SIZE, HEIGHT * TILE_SIZE
